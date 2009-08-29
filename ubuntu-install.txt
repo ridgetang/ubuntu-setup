@@ -1,0 +1,43 @@
+sudo aptitude update
+sudo aptitude dist-upgrade
+sudo aptitude install compizconfig-settings-manager
+sudo aptitude install build-essential
+sudo aptitude install zsh zsh-lovers zsh-doc zsh-dev
+sudo aptitude install screen openssh-server openssh-blacklist-extra
+sudo aptitude install subversion git-core git-svn cvs git-gui gitk git-doc
+sudo aptitude install ruby rubgems ruby-dev ri rdoc irb libruby libruby-extras 
+sudo aptitude install mysql-client mysql-server libmysqlclient16 libmysqlclient16-dev sqlite3 sqlite3-doc
+sudo aptitude install sun-java6-jdk sun-java6-jre sun-java6-source sun-java6-plugin sun-java6-demo sun-java6-fonts
+sudo aptitude install libqt4-sql libqt4-script qt4-qtconfig libqt4-qt3support libcurl3 libqtcore4 libqt4-sql-mysql libqt4-designer libqt4-network libqt4-dbus libqt4-xml libqtgui4 libaudio2
+
+# install virtualbox-3.0 from sun
+
+Add the Gnome Do PPA Repository to your sources list. (See the Ubuntu Repositories).
+
+deb http://ppa.launchpad.net/do-core/ppa/ubuntu jaunty main
+deb-src http://ppa.launchpad.net/do-core/ppa/ubuntu jaunty main
+
+Optional: Add key of repository
+
+gpg --no-default-keyring --keyring /tmp/gnome-do.keyring --keyserver keyserver.ubuntu.com --recv A5D19FDCAA6ABB440CD3464628A8205077558DD0
+gpg --no-default-keyring --keyring /tmp/gnome-do.keyring --export --armor  A5D19FDCAA6ABB440CD3464628A8205077558DD0 | sudo apt-key add -
+rm /tmp/gnome-do.keyring
+
+In Synaptic Package Manager, search 'gnome do' or install from the terminal:
+
+$ sudo aptitude update && sudo aptitude install gnome-do
+
+2.ATI显卡开启compiz后出现最大化延迟的问题(摘自http://www.linuxidc.com/Linux/2009-06/20382.htm)：
+此问题原来是xorg的一个bug，已经有patch了。不过Ubuntu 9.04在发布的时候，不知道为什么把这个patch去掉了。
+现添加认证 ：
+$sudo apt-key adv --recv-keys --keyserver keyserver.Ubuntu.com 0x643dc6bd56580ceb1ab4a9f63b22ab97af1cdfa9
+
+修改/etc/apt/sources.list，增加以下源：
+deb http://ppa.launchpad.net/ubuntu-x-swat/xserver-no-backfill/ubuntu jaunty main
+deb-src http://ppa.launchpad.net/ubuntu-x-swat/xserver-no-backfill/ubuntu jaunty main
+
+之后运行如下命令：
+$sudo apt-get update
+$apt-get upgrade
+
+
