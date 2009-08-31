@@ -41,3 +41,6 @@ $sudo apt-get update
 $apt-get upgrade
 
 
+ sudo rm /var/cache/hald/fdi-cache
+ sudo /etc/init.d/hal restart
+

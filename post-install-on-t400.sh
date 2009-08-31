@@ -30,6 +30,9 @@ sed -i 's/BATT_HD_POWERMGMT=1/BATT_HD_POWERMGMT=200/g' /etc/laptop-mode/laptop-m
 # Menu Key Workaround
 sed -i 's|key\ <I151>\ \ \ {\ \ \ \ \ \ \[\ XF86WakeUp|key\ <I151>\ \  {\ \ \ \ \ \ \[\ Menu\ \ \ \ \ \ |g' /usr/share/X11/xkb/symbols/inet
 
+sudo rm /var/cache/hald/fdi-cache
+sudo /etc/init.d/hal restart
+
 echo '==========================================='
 echo 'After an reboot you certainly can use the features! To do so type "reboot"'
 
